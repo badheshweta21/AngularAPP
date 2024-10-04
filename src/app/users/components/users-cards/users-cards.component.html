@@ -1,0 +1,7 @@
+<div fxLayout="column" fxLayoutAlign="start wrap" fxLayoutGap="16px">
+    <user-card
+        *ngFor="let user of users"
+        [user]="user" [active_fields]="active_fields" [removingUser]="removeUser" (removeUserFromList)="removeUserEvent($event)">
+    </user-card>
+    <div class="message" *ngIf="showMessageRemovedAll && !users.length">No Users</div>
+</div>

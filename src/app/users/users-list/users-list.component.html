@@ -1,0 +1,14 @@
+<div class="users-list-container" fxLayout="column" fxLayoutAlign="start wrap" fxLayoutGap="32px">
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <button mat-flat-button color="primary" (click)="loadUsers()">
+            Load more
+        </button>
+    </div>
+    <hr style="width:100%;text-align:left;margin-left:0">
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-progress-spinner *ngIf="!showMessage && loading" color="light" mode="indeterminate" diameter="32"></mat-progress-spinner>
+    </div>
+    <div class="before-loading" *ngIf="showMessage">No Users Currently Loaded</div>
+    <div class="error-msg" *ngIf="showErrorMsg">Error occured while loading users</div>
+    <users-cards></users-cards>
+</div>

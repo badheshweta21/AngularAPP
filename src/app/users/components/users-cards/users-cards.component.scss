@@ -1,0 +1,23 @@
+
+.message{
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.card{
+  display: block;
+  width : 90%;
+  height : 100px;
+  margin : 5%;
+  margin-right: 5%;
+  animation: loading 1.7s infinite linear;
+  background: #dedfe1;
+  background-image: -webkit-linear-gradient(to right, #dedfe1 0%, #f2f3f5 20%, #dedfe1 40%, #dedfe1 100%);
+  background-image: linear-gradient(to right, #dedfe1 0%, #f2f3f5 20%, #dedfe1 40%, #dedfe1 100%);
+  background-repeat: no-repeat;
+}
+@keyframes loading {
+  0% { background-position  : -100px; }
+  100% { background-position : 500px; }
+}

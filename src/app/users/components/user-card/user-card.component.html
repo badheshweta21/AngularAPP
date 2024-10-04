@@ -1,0 +1,21 @@
+<mat-card *ngIf="user && !removingUser" class="user-card">
+    <button mat-icon-button class="close-button" (click)="removeUser(user)">
+        <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+    <div class="card-content" gdColumns="repeat(2, 1fr)" gdColumns.lt-md="1fr" gdGap="8px 80px">
+        <mat-card-title>{{user.name}}</mat-card-title>
+
+        <div *ngFor="let col of filtered_fields;" fxLayout="row" fxLayoutAlign="start" fxLayoutGap="1em">
+            <b>{{field_names[col]}}:</b>
+            <div class="text-right">
+                {{user.getAttribute(col)}}
+            </div>
+        </div>
+    </div>
+    <span [ngClass]="'user-profile-picture__wrapper user-profile-picture__wrapper-- thumbnail mat-elevation-z2'">
+        <img *ngIf="user.picture" [attr.src]="user.picture.thumbnail" [attr.alt]="user.name"
+            [attr.aria-label]="user.name">
+    </span>
+</mat-card>
+
+<div *ngIf="removingUser" class=".cardSkeleton"></div>
